@@ -8,6 +8,10 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  components: { App },
-  template: '<App/>'
+  // components: { App },
+  // template: '<App/>'
+  // render写法 效率更高
+  render: function(createElement){
+    return createElement(App)
+  }
 })
