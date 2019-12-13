@@ -3,6 +3,7 @@ import Vue from 'vue'
 // 导入组件
 import Home from '../components/Home'
 import About from '../components/About'
+import User from '../components/User'
 
 // 使用路由
 Vue.use(VueRouter)
@@ -21,6 +22,10 @@ const routes = [
     {
         path: '/about',
         component: About
+    },
+    {
+        path: '/user/:userId',
+        component: User
     }
 ]
 

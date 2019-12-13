@@ -3,6 +3,8 @@
     <!-- router-link里加上replace属性，浏览器的返回不能使用 -->
     <router-link to='/home' tag='button'>首页</router-link>
     <router-link to='/about'>关于</router-link>
+    <!-- 动态路由 -->
+    <router-link :to="'/user/' + userId">用户</router-link>
     <button @click='btnClick'>按钮跳转Home</button>
     <router-view></router-view>
   </div>
@@ -15,6 +17,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      userId: 1
+    }
   },
   methods: {
     btnClick(){
