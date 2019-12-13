@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-
+import router from './router'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -10,6 +10,8 @@ new Vue({
   el: '#app',
   // components: { App },
   // template: '<App/>'
+  // router: router的简写
+  router,
   // render写法 效率更高
   render: function(createElement){
     return createElement(App)
