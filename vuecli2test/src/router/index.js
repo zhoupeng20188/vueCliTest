@@ -1,9 +1,13 @@
 import VueRouter from 'vue-router'
 import Vue from 'vue'
-// 导入组件
-import Home from '../components/Home'
-import About from '../components/About'
-import User from '../components/User'
+// // 导入组件
+// import Home from '../components/Home'
+// import About from '../components/About'
+// import User from '../components/User'
+// 路由懒加载写法
+const Home = () => import('../components/Home')
+const About = () => import('../components/About')
+const User = () => import('../components/User')
 
 // 使用路由
 Vue.use(VueRouter)
