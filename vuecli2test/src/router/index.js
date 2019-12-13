@@ -8,6 +8,7 @@ import Vue from 'vue'
 const Home = () => import('../components/Home')
 const About = () => import('../components/About')
 const User = () => import('../components/User')
+const Profile = () => import('../components/Profile')
 const HomeNews = () => import('../components/HomeNews')
 const HomeMessage = () => import('../components/HomeMessage')
 
@@ -48,6 +49,10 @@ const routes = [
     {
         path: '/user/:userId',
         component: User
+    },
+    {
+        path: '/profile',
+        component: Profile
     }
 ]
 
