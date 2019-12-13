@@ -8,6 +8,8 @@ import Vue from 'vue'
 const Home = () => import('../components/Home')
 const About = () => import('../components/About')
 const User = () => import('../components/User')
+const HomeNews = () => import('../components/HomeNews')
+const HomeMessage = () => import('../components/HomeMessage')
 
 // 使用路由
 Vue.use(VueRouter)
@@ -21,7 +23,23 @@ const routes = [
     },
     {
         path: '/home',
-        component: Home
+        component: Home,
+        children: [
+            {
+                path: '',
+                // component: Home
+                // 重定向 默认路径
+                redirect: 'news'
+            },
+            {
+                path: 'news',
+                component: HomeNews
+            },
+            {
+                path: 'message',
+                component: HomeMessage
+            },
+        ]
     },
     {
         path: '/about',
