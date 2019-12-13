@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <router-link to='/home'>首页</router-link>
+    <!-- router-link里加上replace属性，浏览器的返回不能使用 -->
+    <router-link to='/home' tag='button'>首页</router-link>
     <router-link to='/about'>关于</router-link>
+    <button @click='btnClick'>按钮跳转Home</button>
     <router-view></router-view>
   </div>
 </template>
@@ -13,6 +15,14 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  methods: {
+    btnClick(){
+      // 用$router修改路径
+      this.$router.push('/home')
+      // 用replace则没有返回
+      // this.$router.replace('/home')
+    }
   }
 }
 </script>
@@ -25,5 +35,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.router-link-active {
+  background-color: red
 }
 </style>
