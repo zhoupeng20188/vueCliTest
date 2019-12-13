@@ -51,7 +51,10 @@ const routes = [
             title:'关于'
         },
         component: About,
-        beforeEnter: (to, from, next) => console.log('about beforeEnter')
+        beforeEnter: (to, from, next) => {
+            console.log('about beforeEnter')
+            next()
+        }
     },
     {
         path: '/user/:userId',
@@ -77,7 +80,7 @@ const router = new VueRouter({
 
 // 全局前置守卫
 router.beforeEach((to, from, next)=>{
-    console.log(to)
+    // console.log(to)
     document.title = to.matched[0].meta.title
     // 可以判断用户是否登录，登录时调next()，未登录时调next('/')
     next()
@@ -85,7 +88,7 @@ router.beforeEach((to, from, next)=>{
 
 // 全局后置钩子
 router.afterEach((to,from) =>{
-    console.log('---------')
+    // console.log('---------')
 })
 
 // 导出对象

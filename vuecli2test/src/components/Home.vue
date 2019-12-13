@@ -12,7 +12,25 @@
 export default {
   data () {
     return {
+        path: '/home/news'
     };
+  },
+  created() {
+      console.log('home created')
+  },
+
+  destroyed() {
+      console.log('home destoryed')
+  },
+  activated(){
+    // 只有在使用了keep-alive时才会生效
+    console.log('activated' + this.path)
+    this.$router.push(this.path)
+  },
+  beforeRouteLeave(to, from, next) {
+      console.log('beforeRouteLeave' + this.$route.path)
+      this.path = this.$route.path
+      next()
   },
 
   components: {},
