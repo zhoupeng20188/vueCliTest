@@ -5,7 +5,8 @@
     <div>首页</div> -->
     <div v-if="!isActive"><slot name="slot-icon"></slot></div>
     <div v-else><slot name="slot-icon-active"></slot></div>
-    <div :class="{active:isActive}"><slot name="slot-text"></slot></div>
+    <!-- <div :class="{active:isActive}"><slot name="slot-text"></slot></div> -->
+    <div :style="activeStyle"><slot name="slot-text"></slot></div>
     
   </div>
 </template>
@@ -14,7 +15,11 @@
 export default {
   //放在与data同级
   props: {
-        path: String
+        path: String,
+        activeColor:{
+            type: String,
+            default: "red"
+        }
     },
   data () {
     return {
@@ -29,6 +34,9 @@ export default {
           // this.$route.path可以取得当前跳转的path
           // 动态决定是否是active
           return this.$route.path.indexOf(this.path) !== -1 
+      },
+      activeStyle() {
+          return this.isActive ? {color: this.activeColor} : {}
       }
   },
 
@@ -51,7 +59,7 @@ export default {
       height: 24px;
       width: 24px;
   }
-  .active {
+  /* .active {
       color: red;
-  }
+  } */
 </style>
