@@ -7,7 +7,7 @@
     <router-link :to="'/user/' + userId">用户</router-link>
     <router-link :to="{path: '/profile', query:{name:'23423',age: 18}}">Profile</router-link>
     <button @click='btnClick'>按钮跳转Home</button>
-    <keep-alive>
+    <keep-alive exclude="Profile">
       <router-view></router-view>
     </keep-alive>
   </div>
