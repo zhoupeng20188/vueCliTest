@@ -18,13 +18,19 @@ export default {
     },
   data () {
     return {
-        isActive: false
+        // isActive: false
     };
   },
 
   components: {},
 
-  computed: {},
+  computed: {
+      isActive() {
+          // this.$route.path可以取得当前跳转的path
+          // 动态决定是否是active
+          return this.$route.path.indexOf(this.path) !== -1 
+      }
+  },
 
   methods: {
       itemClick() {
