@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class="tar-bar-item">
+  <div class="tar-bar-item" @click="itemClick">
     <!-- <img src="@/assets/img/tabbar/40145.gif" alt="" />
     <div>首页</div> -->
     <div v-if="!isActive"><slot name="slot-icon"></slot></div>
@@ -12,6 +12,10 @@
 
 <script>
 export default {
+  //放在与data同级
+  props: {
+        path: String
+    },
   data () {
     return {
         isActive: false
@@ -22,7 +26,12 @@ export default {
 
   computed: {},
 
-  methods: {}
+  methods: {
+      itemClick() {
+          this.$router.replace(this.path)
+        // console.log(this.path)
+      }
+  }
 }
 
 </script>
