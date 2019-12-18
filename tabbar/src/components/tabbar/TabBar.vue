@@ -4,7 +4,7 @@
   <div id="tab-bar">
     <!-- <slot></slot> -->
     <tab-bar-item path="/home">
-        <img slot="slot-icon" src="@/assets/img/tabbar/home.svg" />
+        <img slot="slot-icon" src="~assets/img/tabbar/home.svg" />
         <img slot="slot-icon-active" src="@/assets/img/tabbar/home-red.svg" />
         <div slot="slot-text">首页</div>
       </tab-bar-item>
