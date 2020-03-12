@@ -2,6 +2,7 @@
 <template>
   <div>
       <h2>我是About页</h2>
+      <div> {{$store.state.count}}</div>
   </div>
 </template>
 

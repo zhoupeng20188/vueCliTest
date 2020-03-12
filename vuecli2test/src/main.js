@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+
+import store from './store'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -12,6 +15,7 @@ new Vue({
   // template: '<App/>'
   // router: router的简写
   router,
+  store,
   // render写法 效率更高
   render: function(createElement){
     return createElement(App)

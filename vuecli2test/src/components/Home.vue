@@ -4,6 +4,7 @@
       <h2>我是Home页</h2>
       <router-link to='/home/news'>新闻</router-link>
       <router-link to='/home/message'>消息</router-link>
+      <div> {{$store.state.count}}</div>
       <router-view></router-view>
   </div>
 </template>
