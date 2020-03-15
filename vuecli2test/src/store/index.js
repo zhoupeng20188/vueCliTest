@@ -16,10 +16,14 @@ const store = new Vuex.Store({
     },
     actions:{
         updateByAction(context,count){
-            // 模拟异步操作
-            setTimeout(()=>{
-                context.commit(UPDATE_COUNT,count)
-            },1000)
+            return new Promise((reslove,reject)=>{
+                // 模拟异步操作
+                setTimeout(()=>{
+                    context.commit(UPDATE_COUNT,count)
+                    reslove('qqqqq3333222')
+                },1000)
+            })
+            
         }
     }
 })

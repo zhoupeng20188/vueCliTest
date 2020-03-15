@@ -56,7 +56,9 @@ export default {
       this.$store.commit(UPDATE_COUNT,this.$store.state.count-1)
     },
     plusByAction(){
-      this.$store.dispatch('updateByAction',this.$store.state.count+1)
+      this.$store.dispatch('updateByAction',this.$store.state.count+1).then((data)=>{
+        console.log("action里已完成！我拿到了action里的值" + data)
+      })
     },
     subByAction(){
       this.$store.dispatch('updateByAction',this.$store.state.count-1)
