@@ -5,6 +5,12 @@ import { UPDATE_COUNT } from './vuex-types';
 // 使用路由
 Vue.use(Vuex)
 
+const ModuleA = {
+    state:{
+        name: 'zhangsan'
+    }
+}
+
 const store = new Vuex.Store({
     state:{
         count:1000
@@ -25,6 +31,9 @@ const store = new Vuex.Store({
             })
             
         }
+    },
+    modules:{
+        a: ModuleA
     }
 })
 

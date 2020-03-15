@@ -5,7 +5,8 @@
       <h2>我是Home页</h2>
       <router-link to='/home/news'>新闻</router-link>
       <router-link to='/home/message'>消息</router-link>
-      <div> {{$store.state.count}}</div>
+      <div> vuex state测试：{{$store.state.count}}</div>
+      <div> modules里的state测试：{{$store.state.a.name}}</div>
       <button @click="plus">同步+</button>
       <button @click="sub">同步-</button>
       <button @click="plusByAction">异步+</button>
