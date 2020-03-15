@@ -1,4 +1,5 @@
 <!--  -->
+
 <template>
   <div>
       <h2>我是Home页</h2>
@@ -12,6 +13,9 @@
 </template>
 
 <script>
+
+import { UPDATE_COUNT } from '../store/vuex-types';
+
 export default {
   data () {
     return {
@@ -44,10 +48,10 @@ export default {
 
   methods: {
     plus(){
-      this.$store.commit("updateCount",this.$store.state.count+1)
+      this.$store.commit(UPDATE_COUNT,this.$store.state.count+1)
     },
     sub(){
-      this.$store.commit("updateCount",this.$store.state.count-1)
+      this.$store.commit(UPDATE_COUNT,this.$store.state.count-1)
     }
   }
 }

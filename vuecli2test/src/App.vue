@@ -16,6 +16,10 @@
 <script>
 import HelloWorld from './components/HelloWorld'
 
+import {
+  UPDATE_COUNT
+} from './store/vuex-types'
+
 export default {
   name: 'App',
   components: {
