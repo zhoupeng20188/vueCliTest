@@ -5,6 +5,8 @@
       <router-link to='/home/news'>新闻</router-link>
       <router-link to='/home/message'>消息</router-link>
       <div> {{$store.state.count}}</div>
+      <button @click="plus">+</button>
+      <button @click="sub">-</button>
       <router-view></router-view>
   </div>
 </template>
@@ -40,7 +42,14 @@ export default {
 
 //   mounted: {},
 
-  methods: {}
+  methods: {
+    plus(){
+      this.$store.commit("updateCount",this.$store.state.count+1)
+    },
+    sub(){
+      this.$store.commit("updateCount",this.$store.state.count-1)
+    }
+  }
 }
 
 </script>

@@ -9,7 +9,9 @@ const store = new Vuex.Store({
         count:1000
     },
     mutations:{
-
+        updateCount(state,count){
+            state.count = count
+        }
     },
     actions:{
 
