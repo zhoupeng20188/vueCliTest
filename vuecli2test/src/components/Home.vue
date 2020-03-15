@@ -6,8 +6,10 @@
       <router-link to='/home/news'>新闻</router-link>
       <router-link to='/home/message'>消息</router-link>
       <div> {{$store.state.count}}</div>
-      <button @click="plus">+</button>
-      <button @click="sub">-</button>
+      <button @click="plus">同步+</button>
+      <button @click="sub">同步-</button>
+      <button @click="plusByAction">异步+</button>
+      <button @click="subByAction">异步-</button>
       <router-view></router-view>
   </div>
 </template>
@@ -52,6 +54,12 @@ export default {
     },
     sub(){
       this.$store.commit(UPDATE_COUNT,this.$store.state.count-1)
+    },
+    plusByAction(){
+      this.$store.dispatch('updateByAction',this.$store.state.count+1)
+    },
+    subByAction(){
+      this.$store.dispatch('updateByAction',this.$store.state.count-1)
     }
   }
 }

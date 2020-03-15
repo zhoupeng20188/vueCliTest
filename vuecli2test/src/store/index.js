@@ -15,7 +15,12 @@ const store = new Vuex.Store({
         }
     },
     actions:{
-
+        updateByAction(context,count){
+            // 模拟异步操作
+            setTimeout(()=>{
+                context.commit(UPDATE_COUNT,count)
+            },1000)
+        }
     }
 })
 
