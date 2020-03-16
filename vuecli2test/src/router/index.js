@@ -8,6 +8,7 @@ import Vue from 'vue'
 const Home = () => import('../components/Home')
 const About = () => import('../components/About')
 const User = () => import('../components/User')
+const ProcessEngine = () => import('../components/ProcessEngine')
 const Profile = () => import('../components/Profile')
 const HomeNews = () => import('../components/HomeNews')
 const HomeMessage = () => import('../components/HomeMessage')
@@ -69,6 +70,13 @@ const routes = [
             title:'profile'
         },
         component: Profile
+    },
+    {
+        path: '/processEngine',
+        meta: {
+            title:'processEngine'
+        },
+        component: ProcessEngine
     }
 ]
 
