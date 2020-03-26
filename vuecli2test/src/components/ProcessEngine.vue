@@ -2,7 +2,11 @@
 <template>
   <div>
       <h2>我是流程引擎页面</h2>
+      <h2>流程列表接口</h2>
       {{data}}
+      <h2>待办任务</h2>
+      {{data2}}
+      <button @click="complete()">完成任务</button>
   </div>
 </template>
 
@@ -19,7 +23,8 @@ export default {
   data () {
     
     return {
-      data: []
+      data: [],
+      data2: []
     };
   },
   created() {
@@ -40,6 +45,18 @@ export default {
     }).catch((err)=>{
       console.log(err)
     })
+
+    request2({
+      url:"/task/todo/list",
+      method: 'get'
+    }).then((res)=>{
+      this.data2 = res
+      console.log(res)
+    }).catch((err)=>{
+      console.log(err)
+    })
+
+    
   },
   components: {},
 
@@ -49,7 +66,22 @@ export default {
       } 
   },
 
-  methods: {}
+  methods: {
+    complete() {
+    request2({
+      url:"/task/complete",
+      method: 'post',
+      data: {
+        "taskId": "ce4b7fb0-6f07-11ea-b1d3-1c1b0d7b318e"
+      }
+    }).then((res)=>{
+      this.data2 = res
+      console.log(res)
+    }).catch((err)=>{
+      console.log(err)
+    })
+    }
+  }
 }
 
 </script>
