@@ -18,5 +18,20 @@ export function request(config){
       timeout: 5000,
       headers: {"Authorization": "Bearer userToken001|0001"}
     })
+
+    instance.interceptors.request.use(config=>{
+        console.log(config)
+        return config
+    }, err=>{
+        console.log(err)
+    })
+
+    instance.interceptors.response.use(data=>{
+        console.log(data)
+        return data
+    }, err=>{
+        console.log(err)
+    })
+
     return instance(config)
   }
